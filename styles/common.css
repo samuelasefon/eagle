@@ -1,0 +1,28 @@
+/* Common styles for both login and admin pages */
+html, body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+button {
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Make the main content take up all available space */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
